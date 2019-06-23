@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    // コンパイル後の.jsのバージョンを指定
+    "target": "es5",
+    // モジュールをどの形式にするかを指定 "None", "CommonJS", "AMD", "System", "UMD", "ES6", "ES2015" "ESNext".
+    //   "ESNext"は、サポートされている最新のESが提案する機能を対象。
+    // 今回は「typescriptで指定のモジュールに変換 -> tsで生成されたモジュールの形式でwebpackでバンドル」とするので、
+    //   webpackが対応しているモジュールの形式ならどれ指定してもコンパイルできるようでした。
+    // 【参考】webpackが対応しているモジュール：https://webpack.js.org/concepts/modules/
+    "module": "esnext",
+    // 厳密な型チェックオプションをすべて有効にする
+    // trueにすると ↓ を全部trueにしたのと同じ意味
+    // --noImplicitAny, --noImplicitThis, --alwaysStrict, --strictBindCallApply, --strictNullChecks, --strictFunctionTypes and --strictPropertyInitialization
+    "strict": true,
+    // JavaScriptファイルもコンパイルできるように
+    "allowJs": true,
+    // jsxを変換するか
+    //  "preserve"：jsxを変換しない「<div />」->「<div />」、jsxの変換はbabelで行いたい場合などで使う
+    //  "react"：jsxを変換する「<div />」->「React.createElement("div")」
+    //  "react-native"：jsxを変換しない「<div />」->「<div />」
+    "jsx": "react"
+  },
+  // コンパイルに含めるファイル
+  "include": ["src"]
+}
